@@ -83,7 +83,7 @@ func (file_manager *FileManager) Write(blockId *BlockId, page *Page) (uint64, er
 	return uint64(cnt_4_byters), nil
 }
 
-func (file_manager *FileManager) size(file_name string) (uint64, error) {
+func (file_manager *FileManager) Size(file_name string) (uint64, error) {
 	file, err := file_manager.getFile(file_name)
 	if err != nil {
 		return 0, err
@@ -97,7 +97,7 @@ func (file_manager *FileManager) size(file_name string) (uint64, error) {
 }
 
 func (file_manager *FileManager) Append(file_name string) (BlockId, error) {
-	blockid, err := file_manager.size(file_name)
+	blockid, err := file_manager.Size(file_name)
 	if err != nil {
 		return BlockId{}, err
 	}

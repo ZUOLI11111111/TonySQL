@@ -12,7 +12,7 @@ func TestFileManager(t *testing.T) {
 	blk := NewBlockId("testfile", 2)
 	p1 := NewPageBySize(fm.Block_Size())
 	pos1 := uint64(88)
-	s := "abcdefghijklm"
+	s := "abcdefghijklmnopqrstuvwxyz"
 	p1.SetString(pos1, s)
 	size := p1.MaxLengthForString(s)
 	pos2 := pos1 + size 
